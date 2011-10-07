@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1.rc1'
+gem 'rails', '3.1.1.rc2'
 gem 'pg'
 
+gem 'sass-rails', "  ~> 3.1.0"
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem "haml-rails"
 gem 'jquery-rails'
 
 gem 'schema_plus'
