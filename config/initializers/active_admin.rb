@@ -1,5 +1,5 @@
 ActiveAdmin.setup do |config|
-  config.site_title = "Presimondo"
+  config.site_title = "Koncertowka"
 
   config.default_namespace = :admin
 
