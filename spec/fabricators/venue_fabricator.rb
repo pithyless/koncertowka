@@ -1,0 +1,2 @@
+Fabricator(:venue) do
+end
