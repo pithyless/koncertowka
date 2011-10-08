@@ -8,7 +8,7 @@ class AddCoreDomainModels < ActiveRecord::Migration
       t.string  :slug,         :null => false, :limit => 60, :index => :unique
       t.string  :name,         :null => false, :limit => 60
       t.text    :description
-      t.integer :city_id,      :null => false
+      t.integer :city_id,      :null => false, :index => true
 
       t.string  :address_street
       t.integer :address_postal_code
