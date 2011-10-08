@@ -21,6 +21,9 @@ class AddCoreDomainModels < ActiveRecord::Migration
       t.string :slug,         :null => false, :limit => 60, :index => :unique
       t.string :tagline
       t.text   :description
+
+      t.string :image
+
       t.timestamps
     end
 

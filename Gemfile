@@ -23,6 +23,10 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 gem "friendly_id", "~> 4.0.0.beta12"
 
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'chronic'
+
 # gem 'unicorn'
 # gem 'capistrano'
 

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110921103700) do
     t.string   "slug",        :limit => 60, :null => false
     t.string   "tagline"
     t.text     "description"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["slug"], :name => "index_artists_on_slug", :unique => true
