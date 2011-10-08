@@ -21,6 +21,8 @@ gem 'cancan'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
+gem "friendly_id", "~> 4.0.0.beta12"
+
 # gem 'unicorn'
 # gem 'capistrano'
 

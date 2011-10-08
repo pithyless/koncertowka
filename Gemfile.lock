@@ -74,6 +74,7 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    friendly_id (4.0.0.beta12)
     growl (1.0.3)
     guard (0.8.4)
       thor (~> 0.14.6)
@@ -210,6 +211,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   devise (>= 1.4.4)
   fabrication
+  friendly_id (~> 4.0.0.beta12)
   growl
   guard
   guard-rails
