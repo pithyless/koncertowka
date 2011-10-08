@@ -11,10 +11,10 @@ class Event < ActiveRecord::Base
   end
 
   belongs_to :venue
-  belongs_to :promoter, :class_name => :user
+  belongs_to :promoter, :class_name => 'User'
   has_many   :artists, :through => :appearances
 
-  attr_accessible :title, :description, :venue_id, :start_ad, :end_at
+  attr_accessible :title, :description, :venue_id, :start_at, :end_at
 
   before_validation :set_current_promoter
 
@@ -30,7 +30,9 @@ class Event < ActiveRecord::Base
 
   def set_current_promoter
     if new_record?
-      self[:promoter_id] = current_user.id
+      # TODO: current_user
+      self[:promoter_id] = User.first.id
     end
+    true
   end
 end

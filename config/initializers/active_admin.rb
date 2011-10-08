@@ -1,5 +1,6 @@
+# encoding: utf-8
 ActiveAdmin.setup do |config|
-  config.site_title = "Koncertowka"
+  config.site_title = "Koncertówka"
 
   config.default_namespace = :admin
 

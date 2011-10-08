@@ -8,7 +8,11 @@ class Venue < ActiveRecord::Base
                                       %w(address_postal_code postal_code),
                                       %w(city_id city_id) ]
 
-  attr_accessible :name, :description, :address_street, :address_postal_code
+  attr_accessible :name, :description, :address_street, :address_postal_code, :city_id
+
+  def city_name
+    city.city
+  end
 end
 
 class Address
