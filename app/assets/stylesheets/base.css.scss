@@ -1,0 +1,121 @@
+/* vars */
+$font-basic: Arial, sans-serif;
+$font-header: 'Francois One', sans-serif;
+$color-bg: #f8f5e4; 
+$color-text: #2c2c2c;
+$color-active: #734d57;
+$color-alt: #bfa3b2;
+
+
+/* css reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, a, em, img, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, pre 
+{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body {line-height:1;}
+ol, ul {list-style:none;}
+:focus {outline:0;}
+table {border-collapse:collapse;border-spacing:0;}
+
+
+/* mixins */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin linear-gradient($color_from, $color_to) {
+  background: $color_to;
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0%, $color_from), color-stop(100%, $color_to));
+  background: -webkit-linear-gradient(center top, $color_from, $color_to);
+  background: -moz-linear-gradient(center top, $color_from, $color_to);
+  background: -o-linear-gradient($color_from, $color_to);
+  background: linear-gradient(center top, $color_from, $color_to);
+}
+
+
+/* helpers */
+.clearfix:before,
+.clearfix:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.hidden{display:none;}
+.vhidden{visibility:hidden;}
+
+/* globals */
+body {color:$color-text; background-color:$color-bg; font-family: $font-basic; font-size: 13px; line-height: 1.5em;}
+html {overflow-y: scroll;}
+
+a:hover, a:active {outline: none;}
+a, a:active, a:visited {color:$color-text;}
+a:hover {color: $color-active;}
+
+h1,h2,h3,h4,h5,h6 {font-weight: bold; font-family: $font-header;}
+
+h1 {font-size:52px; line-height:1.5em;}
+h2 {font-size:36px; line-height:1.5em;}
+h3 {font-size:19px; line-height:1.5em;}
+h4 {font-size:16px; line-height:1.5em;}
+h5 {font-size:14px; line-height:1.5em;}
+
+
+/* layout */
+.wrapper {width:990px; margin:0 auto; position:relative;}
+
+#login-bar {
+	background:$color-active;
+	height:7px;
+
+	.panel {
+		position:absolute;
+		right:0;
+		top:7px;
+		background:$color-active;
+		color:#fff;
+		@include border-radius(0 0 3px 3px);
+		padding:0 14px 10px;
+		font-size:0.9em;
+		font-weight:bold;
+	}
+}
+
+header {
+	.wrapper {padding:30px 0;}
+}
+
+hgroup {
+	background:image-url("logo.png");
+	width:396px;
+	height:57px;
+
+	h1, h2{display:none;}
+}
+
+#search-box {
+	position:absolute;
+	right:0;bottom:30px;
+
+	input {
+		background:#fff;
+		border:0;
+		color:$color-alt;
+		font-size:0.9em;
+		@include border-radius(3px);
+		height:41px;
+		line-height:41px;
+		width:200px;
+		font-weight:bold;
+		padding:0 10px;
+	}
+}

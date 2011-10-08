@@ -1,0 +1,43 @@
+!!! 5
+%html
+  %head
+    %title koncertówka.pl - muzyczna rewolucja w Twoim mieście
+    %meta{:charset => "utf-8"}
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    
+    %link{:href => "http://fonts.googleapis.com/css?family=Francois+One&subset=latin,latin-ext", :rel => "stylesheet"}
+    
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+  %body{:class=> body_classes.join(' ')}
+
+    #login-bar
+      .wrapper
+        .panel login panel
+    
+    %header
+      .wrapper
+
+        %hgroup
+          %h1 koncertowka.pl
+          %h2 muzyczna rewolucja w Twoim mieście
+      
+        #search-box
+          %input{:type=>'text', :placeholder=>"szukaj wydarzeń, klubów, artystów"}
+          
+
+
+    .flash
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :class => "#{name}_note", :id => "flash_#{name}" if msg.is_a?(String)
+
+    = yield
+  
+
+    =# render 'devise/menu/registration_items'
+    =# render 'devise/menu/login_items'
+
+    = javascript_include_tag "application"
+
+

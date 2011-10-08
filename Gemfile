@@ -12,6 +12,9 @@ end
 gem "haml-rails"
 gem 'jquery-rails'
 
+gem 'therubyracer'
+gem 'rails-dev-tweaks', '~> 0.5.1'
+
 gem 'schema_plus'
 gem 'schema_associations'
 gem 'schema_validations'
