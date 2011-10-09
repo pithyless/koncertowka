@@ -1,7 +1,8 @@
 /* vars */
 $font-basic: Arial, sans-serif;
 $font-header: 'Francois One', sans-serif;
-$color-bg: #f8f5e4; 
+$color-bg: #f8f5e4;
+$color-bg-alt: #fcfbf4;
 $color-text: #2c2c2c;
 $color-active: #734d57;
 $color-alt: #bfa3b2;
@@ -61,32 +62,39 @@ a:hover, a:active {outline: none;}
 a, a:active, a:visited {color:$color-text;}
 a:hover {color: $color-active;}
 
-h1,h2,h3,h4,h5,h6 {font-weight: bold; font-family: $font-header;}
+h1,h2,h3,h4,h5,h6 {font-family: $font-header;}
 
-h1 {font-size:52px; line-height:1.5em;}
-h2 {font-size:36px; line-height:1.5em;}
+h1 {font-size:3em; line-height:1.5em;}
+h2 {font-size:2.7em; line-height:1.5em;}
 h3 {font-size:19px; line-height:1.5em;}
 h4 {font-size:16px; line-height:1.5em;}
 h5 {font-size:14px; line-height:1.5em;}
 
 
 /* layout */
-.wrapper {width:990px; margin:0 auto; position:relative;}
+.wrapper {width:990px; margin:0 auto; position:relative; max-width:100%;}
 
 #login-bar {
 	background:$color-active;
-	height:7px;
+	position:relative;
+	color:#fff;
+	padding-bottom:7px;
 
-	.panel {
+	.content {display:none; padding:10px 0 3px;}
+
+	.handler {
 		position:absolute;
 		right:0;
-		top:7px;
+		bottom:-30px;
 		background:$color-active;
-		color:#fff;
 		@include border-radius(0 0 3px 3px);
-		padding:0 14px 10px;
+		padding:0 14px 5px;
 		font-size:0.9em;
 		font-weight:bold;
+		z-index:100;
+
+		a {color:inherit; text-decoration:none;}
+		a:hover {color: $color-bg;}
 	}
 }
 
@@ -105,17 +113,63 @@ hgroup {
 #search-box {
 	position:absolute;
 	right:0;bottom:30px;
+	text-align:right;
+	width:100%;
 
 	input {
 		background:#fff;
 		border:0;
 		color:$color-alt;
 		font-size:0.9em;
-		@include border-radius(3px);
+		@include border-radius(3px 0 0 3px);
 		height:41px;
 		line-height:41px;
 		width:200px;
 		font-weight:bold;
 		padding:0 10px;
+		vertical-align:top;
+		position:relative;
+		left:4px;
+		width:23%;
 	}
+	.ico {
+		width:48px;
+		height:41px;
+		background:image-url("search_btn.png");
+		display:inline-block;
+	}
+}
+
+/* home page */
+#promo-box {
+	background:$color-bg-alt;
+	padding:30px 0 20px;
+
+	.wrapper {@extend .clearfix;}
+	h2 {color:$color-active;}
+
+	.col1 {width:75%;float:left;}
+	.col2 {width:23%;float:right;margin-left:2%;}
+}
+
+.mega-event {
+	background:#111;
+	height:220px;
+}
+
+.mega-caption {
+	text-transform:uppercase;
+	@extend h2;
+	float:left;
+	width:80%;
+
+	span {color:$color-alt;}
+}
+
+.i-am-in-button {
+	background:yellow;
+	@include border-radius(3px);
+	float:right;
+	padding:5px 10px;
+	margin-top:10px;
 }

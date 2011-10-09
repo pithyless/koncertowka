@@ -14,7 +14,10 @@
 
     #login-bar
       .wrapper
-        .panel login panel
+        .content
+          some content for login
+        .handler
+          %a{:href=>'#'} login panel
     
     %header
       .wrapper
@@ -25,7 +28,8 @@
       
         #search-box
           %input{:type=>'text', :placeholder=>"szukaj wydarzeń, klubów, artystów"}
-          
+          .ico &nbsp;
+
 
 
     .flash
